@@ -4,9 +4,11 @@ class QuestionsController < ApplicationController
   end
 
   def answer
-    if params[:question] == 'work'
+    if params[:input].include? 'work'
       @answer = 'Great'
-    elsif params[:question] == '?'
+    elsif params[:input].include? 'is chris a faggot?'
+      @answer = 'Damn right, smart question!'
+    elsif params[:input][-1] == '?'
       @answer = 'Silly question, get back to work'
     else
       @answer = 'I do not care, get dressed and go to work!'
